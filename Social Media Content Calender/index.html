@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Luna Brew Content Calendar Dashboard</title>
+
+    <meta name="description"
+        content="Interactive Social Media Content Calendar Dashboard for Luna Brew">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===================================== -->
+    <!-- BACKGROUND EFFECTS -->
+    <!-- ===================================== -->
+
+    <div class="gradient-bg"></div>
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- ===================================== -->
+    <!-- APP CONTAINER -->
+    <!-- ===================================== -->
+
+    <div class="app-container">
+
+        <!-- ===================================== -->
+        <!-- HEADER -->
+        <!-- ===================================== -->
+
+        <header class="header">
+
+            <div class="brand-section">
+
+                <div class="logo">
+                    <i class="fa-solid fa-mug-hot"></i>
+                </div>
+
+                <div class="brand-text">
+                    <h1>Luna Brew</h1>
+                    <p>Social Media Content Calendar Dashboard</p>
+                </div>
+
+            </div>
+
+            <div class="header-actions">
+
+                <button id="themeToggle"
+                    class="theme-btn"
+                    aria-label="Toggle Theme">
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+            </div>
+
+        </header>
+
+        <!-- ===================================== -->
+        <!-- HERO SECTION -->
+        <!-- ===================================== -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="hero-badge">
+                    July 2026 Marketing Calendar
+                </span>
+
+                <h2>
+                    Plan, Schedule &
+                    Optimize Social Media Content
+                </h2>
+
+                <p>
+                    A premium internship-level social media content
+                    planning dashboard featuring monthly scheduling,
+                    analytics, hashtag planning, visual strategies,
+                    content categorization and engagement tracking.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <button class="primary-btn"
+                        onclick="document.getElementById('calendarGrid').scrollIntoView({behavior:'smooth'})">
+
+                        <i class="fa-solid fa-calendar-days"></i>
+                        View Calendar
+
+                    </button>
+
+                    <button class="secondary-btn"
+                        onclick="document.getElementById('exportCalendar').click()">
+
+                        <i class="fa-solid fa-download"></i>
+                        Export Plan
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===================================== -->
+        <!-- KPI DASHBOARD -->
+        <!-- ===================================== -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </div>
+
+                <div>
+                    <h3 id="postsCounter">0</h3>
+                    <p>Planned Posts</p>
+                </div>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-hashtag"></i>
+                </div>
+
+                <div>
+                    <h3 id="hashtagsCounter">0</h3>
+                    <p>Hashtag Sets</p>
+                </div>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <div>
+                    <h3 id="engagementCounter">0%</h3>
+                    <p>Target Engagement</p>
+                </div>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    <i class="fa-solid fa-camera"></i>
+                </div>
+
+                <div>
+                    <h3 id="visualCounter">0</h3>
+                    <p>Visual Assets</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===================================== -->
+        <!-- CONTROLS -->
+        <!-- ===================================== -->
+
+        <section class="controls">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-search"></i>
+
+                <input type="text"
+                    id="searchInput"
+                    placeholder="Search content ideas..."
+                    autocomplete="off">
+
+            </div>
+
+            <select id="categoryFilter">
+
+                <option value="all">All Categories</option>
+                <option value="education">Education</option>
+                <option value="community">Community</option>
+                <option value="promotion">Promotion</option>
+                <option value="product">Product</option>
+
+            </select>
+
+            <button id="exportCalendar"
+                class="export-btn">
+
+                <i class="fa-solid fa-download"></i>
+                Export Calendar
+
+            </button>
+
+        </section>
+
+        <!-- ===================================== -->
+        <!-- CONTENT ANALYTICS -->
+        <!-- ===================================== -->
+
+        <section class="analytics-section">
+
+            <div class="section-title">
+
+                <h2>Monthly Content Strategy</h2>
+
+                <p>
+                    Optimized content distribution designed
+                    to maximize reach, engagement, brand awareness
+                    and customer loyalty.
+                </p>
+
+            </div>
+
+            <div class="analytics-grid">
+
+                <div class="analytics-card">
+
+                    <h3>Educational Content</h3>
+
+                    <div class="progress-bar">
+                        <div class="progress-fill education-fill"
+                            data-width="35"></div>
+                    </div>
+
+                    <span>35%</span>
+
+                </div>
+
+                <div class="analytics-card">
+
+                    <h3>Community Content</h3>
+
+                    <div class="progress-bar">
+                        <div class="progress-fill community-fill"
+                            data-width="25"></div>
+                    </div>
+
+                    <span>25%</span>
+
+                </div>
+
+                <div class="analytics-card">
+
+                    <h3>Promotional Content</h3>
+
+                    <div class="progress-bar">
+                        <div class="progress-fill promo-fill"
+                            data-width="20"></div>
+                    </div>
+
+                    <span>20%</span>
+
+                </div>
+
+                <div class="analytics-card">
+
+                    <h3>Product Content</h3>
+
+                    <div class="progress-bar">
+                        <div class="progress-fill product-fill"
+                            data-width="20"></div>
+                    </div>
+
+                    <span>20%</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===================================== -->
+        <!-- CALENDAR SECTION -->
+        <!-- ===================================== -->
+
+        <section class="calendar-section">
+
+            <div class="section-title">
+
+                <h2>July Content Calendar</h2>
+
+                <p>
+                    Click any day card to view complete
+                    content strategy, hashtags,
+                    visual assets and posting objectives.
+                </p>
+
+            </div>
+
+            <div id="calendarGrid"
+                class="calendar-grid">
+
+                <!-- DAY 1 -->
+
+                <div class="calendar-card"
+                    data-category="community">
+
+                    <div class="day-number">1</div>
+
+                    <span class="category community">
+                        Community
+                    </span>
+
+                    <h3>Morning Coffee Ritual</h3>
+
+                    <p>
+                        Share customer morning coffee stories.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        8:00 AM
+                    </div>
+
+                </div>
+
+                <!-- DAY 2 -->
+
+                <div class="calendar-card"
+                    data-category="education">
+
+                    <div class="day-number">2</div>
+
+                    <span class="category education">
+                        Education
+                    </span>
+
+                    <h3>Coffee Bean Origins</h3>
+
+                    <p>
+                        Explain where our coffee beans come from.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        6:00 PM
+                    </div>
+
+                </div>
+
+                <!-- DAY 3 -->
+
+                <div class="calendar-card"
+                    data-category="product">
+
+                    <div class="day-number">3</div>
+
+                    <span class="category product">
+                        Product
+                    </span>
+
+                    <h3>Signature Latte Feature</h3>
+
+                    <p>
+                        Showcase our best-selling latte.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        11:00 AM
+                    </div>
+
+                </div>
+
+                <!-- DAY 4 -->
+
+                <div class="calendar-card"
+                    data-category="promotion">
+
+                    <div class="day-number">4</div>
+
+                    <span class="category promotion">
+                        Promotion
+                    </span>
+
+                    <h3>Weekend Discount</h3>
+
+                    <p>
+                        Promote a limited-time offer.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        10:00 AM
+                    </div>
+
+                </div>
+
+                <!-- DAY 5 -->
+
+                <div class="calendar-card"
+                    data-category="community">
+
+                    <div class="day-number">5</div>
+
+                    <span class="category community">
+                        Community
+                    </span>
+
+                    <h3>Customer Spotlight</h3>
+
+                    <p>
+                        Feature a loyal Luna Brew customer.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        12:00 PM
+                    </div>
+
+                </div>
+
+                                <!-- DAY 6 -->
+
+                <div class="calendar-card"
+                    data-category="education">
+
+                    <div class="day-number">6</div>
+
+                    <span class="category education">
+                        Education
+                    </span>
+
+                    <h3>Brewing Tips</h3>
+
+                    <p>
+                        Share French Press brewing advice.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        5:00 PM
+                    </div>
+
+                </div>
+
+                <!-- DAY 7 -->
+
+                <div class="calendar-card"
+                    data-category="product">
+
+                    <div class="day-number">7</div>
+
+                    <span class="category product">
+                        Product
+                    </span>
+
+                    <h3>New Seasonal Drink</h3>
+
+                    <p>
+                        Launch our seasonal menu item.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        1:00 PM
+                    </div>
+
+                </div>
+
+                <!-- DAY 8 -->
+
+                <div class="calendar-card"
+                    data-category="education">
+
+                    <div class="day-number">8</div>
+
+                    <span class="category education">
+                        Education
+                    </span>
+
+                    <h3>Espresso Explained</h3>
+
+                    <p>
+                        Difference between espresso and coffee.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        6:30 PM
+                    </div>
+
+                </div>
+
+                <!-- DAY 9 -->
+
+                <div class="calendar-card"
+                    data-category="community">
+
+                    <div class="day-number">9</div>
+
+                    <span class="category community">
+                        Community
+                    </span>
+
+                    <h3>Poll of the Week</h3>
+
+                    <p>
+                        Ask followers about favorite coffee styles.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        7:00 PM
+                    </div>
+
+                </div>
+
+                <!-- DAY 10 -->
+
+                <div class="calendar-card"
+                    data-category="promotion">
+
+                    <div class="day-number">10</div>
+
+                    <span class="category promotion">
+                        Promotion
+                    </span>
+
+                    <h3>Buy One Get One</h3>
+
+                    <p>
+                        Drive store traffic through BOGO offers.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        11:00 AM
+                    </div>
+
+                </div>
+
+                <!-- DAY 11 -->
+
+                <div class="calendar-card"
+                    data-category="product">
+
+                    <div class="day-number">11</div>
+
+                    <span class="category product">
+                        Product
+                    </span>
+
+                    <h3>Coffee & Pastry Pairing</h3>
+
+                    <p>
+                        Showcase food and beverage combos.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        2:00 PM
+                    </div>
+
+                </div>
+
+                <!-- DAY 12 -->
+
+                <div class="calendar-card"
+                    data-category="education">
+
+                    <div class="day-number">12</div>
+
+                    <span class="category education">
+                        Education
+                    </span>
+
+                    <h3>Coffee Myth Busters</h3>
+
+                    <p>
+                        Debunk common coffee misconceptions.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        6:00 PM
+                    </div>
+
+                </div>
+
+                <!-- DAY 13 -->
+
+                <div class="calendar-card"
+                    data-category="community">
+
+                    <div class="day-number">13</div>
+
+                    <span class="category community">
+                        Community
+                    </span>
+
+                    <h3>Team Spotlight</h3>
+
+                    <p>
+                        Introduce baristas and staff members.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        1:00 PM
+                    </div>
+
+                </div>
+
+                <!-- DAY 14 -->
+
+                <div class="calendar-card"
+                    data-category="promotion">
+
+                    <div class="day-number">14</div>
+
+                    <span class="category promotion">
+                        Promotion
+                    </span>
+
+                    <h3>Loyalty Rewards</h3>
+
+                    <p>
+                        Highlight rewards program benefits.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        10:00 AM
+                    </div>
+
+                </div>
+
+                <!-- DAY 15 -->
+
+                <div class="calendar-card"
+                    data-category="product">
+
+                    <div class="day-number">15</div>
+
+                    <span class="category product">
+                        Product
+                    </span>
+
+                    <h3>Cold Brew Feature</h3>
+
+                    <p>
+                        Promote summer cold brew specials.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        12:00 PM
+                    </div>
+
+                </div>
+
+                <!-- DAY 16 -->
+
+                <div class="calendar-card"
+                    data-category="education">
+
+                    <div class="day-number">16</div>
+
+                    <span class="category education">
+                        Education
+                    </span>
+
+                    <h3>Coffee Brewing Hacks</h3>
+
+                    <p>
+                        Quick tips for brewing better coffee.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        5:00 PM
+                    </div>
+
+                </div>
+
+                <!-- DAY 17 -->
+
+                <div class="calendar-card"
+                    data-category="community">
+
+                    <div class="day-number">17</div>
+
+                    <span class="category community">
+                        Community
+                    </span>
+
+                    <h3>User Generated Content</h3>
+
+                    <p>
+                        Feature customer coffee moments.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        1:00 PM
+                    </div>
+
+                </div>
+
+                <!-- DAY 18 -->
+
+                <div class="calendar-card"
+                    data-category="promotion">
+
+                    <div class="day-number">18</div>
+
+                    <span class="category promotion">
+                        Promotion
+                    </span>
+
+                    <h3>Weekend Combo Offer</h3>
+
+                    <p>
+                        Coffee and pastry combo discounts.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        10:00 AM
+                    </div>
+
+                </div>
+
+                <!-- DAY 19 -->
+
+                <div class="calendar-card"
+                    data-category="product">
+
+                    <div class="day-number">19</div>
+
+                    <span class="category product">
+                        Product
+                    </span>
+
+                    <h3>Bean of the Month</h3>
+
+                    <p>
+                        Highlight premium bean selections.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        12:00 PM
+                    </div>
+
+                </div>
+
+                <!-- DAY 20 -->
+
+                <div class="calendar-card"
+                    data-category="education">
+
+                    <div class="day-number">20</div>
+
+                    <span class="category education">
+                        Education
+                    </span>
+
+                    <h3>Coffee Storage Tips</h3>
+
+                    <p>
+                        Teach customers how to store beans properly.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        6:00 PM
+                    </div>
+
+                </div>
+
+                <!-- DAY 21 -->
+
+                <div class="calendar-card"
+                    data-category="community">
+
+                    <div class="day-number">21</div>
+
+                    <span class="category community">
+                        Community
+                    </span>
+
+                    <h3>Customer Reviews</h3>
+
+                    <p>
+                        Share top customer testimonials.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        2:00 PM
+                    </div>
+
+                </div>
+
+                <!-- DAY 22 -->
+
+                <div class="calendar-card"
+                    data-category="product">
+
+                    <div class="day-number">22</div>
+
+                    <span class="category product">
+                        Product
+                    </span>
+
+                    <h3>Iced Coffee Showcase</h3>
+
+                    <p>
+                        Feature refreshing summer beverages.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        11:00 AM
+                    </div>
+
+                </div>
+
+                <!-- DAY 23 -->
+
+                <div class="calendar-card"
+                    data-category="promotion">
+
+                    <div class="day-number">23</div>
+
+                    <span class="category promotion">
+                        Promotion
+                    </span>
+
+                    <h3>Flash Sale Friday</h3>
+
+                    <p>
+                        24-hour coffee promotion campaign.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        9:00 AM
+                    </div>
+
+                </div>
+
+                <!-- DAY 24 -->
+
+                <div class="calendar-card"
+                    data-category="education">
+
+                    <div class="day-number">24</div>
+
+                    <span class="category education">
+                        Education
+                    </span>
+
+                    <h3>Latte Art Tutorial</h3>
+
+                    <p>
+                        Beginner guide to latte art.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        7:00 PM
+                    </div>
+
+                </div>
+
+                <!-- DAY 25 -->
+
+                <div class="calendar-card"
+                    data-category="community">
+
+                    <div class="day-number">25</div>
+
+                    <span class="category community">
+                        Community
+                    </span>
+
+                    <h3>Weekend Coffee Challenge</h3>
+
+                    <p>
+                        Encourage audience participation.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        10:00 AM
+                    </div>
+
+                </div>
+
+                                <!-- DAY 26 -->
+
+                <div class="calendar-card"
+                    data-category="product">
+
+                    <div class="day-number">26</div>
+
+                    <span class="category product">
+                        Product
+                    </span>
+
+                    <h3>Merchandise Feature</h3>
+
+                    <p>
+                        Showcase branded mugs and accessories.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        1:00 PM
+                    </div>
+
+                </div>
+
+                <!-- DAY 27 -->
+
+                <div class="calendar-card"
+                    data-category="promotion">
+
+                    <div class="day-number">27</div>
+
+                    <span class="category promotion">
+                        Promotion
+                    </span>
+
+                    <h3>Subscription Offer</h3>
+
+                    <p>
+                        Promote monthly coffee subscriptions.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        11:00 AM
+                    </div>
+
+                </div>
+
+                <!-- DAY 28 -->
+
+                <div class="calendar-card"
+                    data-category="education">
+
+                    <div class="day-number">28</div>
+
+                    <span class="category education">
+                        Education
+                    </span>
+
+                    <h3>Caffeine Facts</h3>
+
+                    <p>
+                        Interesting coffee and caffeine facts.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        6:30 PM
+                    </div>
+
+                </div>
+
+                <!-- DAY 29 -->
+
+                <div class="calendar-card"
+                    data-category="community">
+
+                    <div class="day-number">29</div>
+
+                    <span class="category community">
+                        Community
+                    </span>
+
+                    <h3>Behind The Scenes</h3>
+
+                    <p>
+                        Inside Luna Brew operations.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        2:00 PM
+                    </div>
+
+                </div>
+
+                <!-- DAY 30 -->
+
+                <div class="calendar-card"
+                    data-category="product">
+
+                    <div class="day-number">30</div>
+
+                    <span class="category product">
+                        Product
+                    </span>
+
+                    <h3>Top Seller Roundup</h3>
+
+                    <p>
+                        Monthly best-selling products.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        12:00 PM
+                    </div>
+
+                </div>
+
+                <!-- DAY 31 -->
+
+                <div class="calendar-card"
+                    data-category="community">
+
+                    <div class="day-number">31</div>
+
+                    <span class="category community">
+                        Community
+                    </span>
+
+                    <h3>Month-End Thank You</h3>
+
+                    <p>
+                        Celebrate and thank the community.
+                    </p>
+
+                    <div class="post-time">
+                        <i class="fa-solid fa-clock"></i>
+                        5:00 PM
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===================================== -->
+        <!-- HASHTAG LIBRARY -->
+        <!-- ===================================== -->
+
+        <section class="hashtag-section">
+
+            <div class="section-title">
+
+                <h2>Hashtag Library</h2>
+
+                <p>
+                    Recommended hashtags for campaigns
+                    and social media growth.
+                </p>
+
+            </div>
+
+            <div class="hashtag-container">
+
+                <span>#LunaBrew</span>
+                <span>#CoffeeLovers</span>
+                <span>#MorningCoffee</span>
+                <span>#CoffeeTime</span>
+                <span>#CafeCulture</span>
+                <span>#CoffeeAddict</span>
+                <span>#CoffeeCommunity</span>
+                <span>#SpecialtyCoffee</span>
+                <span>#CoffeeShop</span>
+                <span>#CoffeeGram</span>
+                <span>#BrewedFresh</span>
+                <span>#CoffeeMoments</span>
+
+            </div>
+
+        </section>
+
+        <!-- ===================================== -->
+        <!-- VISUAL ASSET PLANNER -->
+        <!-- ===================================== -->
+
+        <section class="asset-section">
+
+            <div class="section-title">
+
+                <h2>Visual Asset Planner</h2>
+
+                <p>
+                    Suggested creative assets
+                    for content production.
+                </p>
+
+            </div>
+
+            <div class="asset-grid">
+
+                <div class="asset-card">
+                    📸 Product Photography
+                </div>
+
+                <div class="asset-card">
+                    🎥 Reels & Short Videos
+                </div>
+
+                <div class="asset-card">
+                    ☕ Coffee Lifestyle Content
+                </div>
+
+                <div class="asset-card">
+                    🌱 Sustainability Stories
+                </div>
+
+                <div class="asset-card">
+                    👨‍🍳 Barista Tutorials
+                </div>
+
+                <div class="asset-card">
+                    🎨 Brand Graphics
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===================================== -->
+        <!-- STRATEGY SUMMARY -->
+        <!-- ===================================== -->
+
+        <section class="summary-section">
+
+            <div class="section-title">
+                <h2>Monthly Strategy Summary</h2>
+            </div>
+
+            <div class="summary-card">
+
+                <p>
+                    Educational content builds authority,
+                    trust and long-term audience retention.
+                </p>
+
+                <p>
+                    Community-focused content strengthens
+                    engagement and customer loyalty.
+                </p>
+
+                <p>
+                    Product content drives awareness
+                    and purchase intent.
+                </p>
+
+                <p>
+                    Promotional campaigns boost conversions
+                    and store traffic.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ===================================== -->
+        <!-- FOOTER -->
+        <!-- ===================================== -->
+
+        <footer class="footer">
+
+            <p>
+                © 2026 Luna Brew Content Calendar Dashboard
+            </p>
+
+            <span>
+                Internship Portfolio Project
+            </span>
+
+        </footer>
+
+    </div>
+
+    <!-- ===================================== -->
+    <!-- CONTENT MODAL -->
+    <!-- ===================================== -->
+
+    <div id="contentModal"
+        class="modal hidden">
+
+        <div class="modal-content">
+
+            <button id="closeModal"
+                class="close-btn"
+                aria-label="Close Modal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+            <h2 id="modalTitle">
+                Content Details
+            </h2>
+
+            <p id="modalDescription">
+                Content information appears here.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ===================================== -->
+    <!-- TOAST NOTIFICATION -->
+    <!-- ===================================== -->
+
+    <div id="toast"
+        class="toast">
+
+        <span id="toastText">
+            Notification
+        </span>
+
+    </div>
+
+    <!-- ===================================== -->
+    <!-- LOADING OVERLAY -->
+    <!-- ===================================== -->
+
+    <div id="loadingOverlay"
+        class="loading-overlay hidden">
+
+        <div class="loader">
+
+            <div class="spinner"></div>
+
+            <p>
+                Loading Content Calendar...
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ===================================== -->
+    <!-- MAIN JAVASCRIPT -->
+    <!-- ===================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
